@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    219234,       5765]
-NotebookOptionsPosition[    213678,       5672]
-NotebookOutlinePosition[    214093,       5689]
-CellTagsIndexPosition[    214050,       5686]
+NotebookDataLength[    219386,       5768]
+NotebookOptionsPosition[    213830,       5675]
+NotebookOutlinePosition[    214245,       5692]
+CellTagsIndexPosition[    214202,       5689]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -5350,9 +5350,11 @@ Cell[BoxData[
   "Out[169]=",ExpressionUUID->"35210a10-8cd6-4e6b-8cfc-18710a2e1f76"]
 }, Open  ]],
 
-Cell["\:4e3a\:4e86r2>0,\:5219c>0,q<0", "Text",
- CellChangeTimes->{{3.9219875720243473`*^9, 
-  3.9219875826948667`*^9}},ExpressionUUID->"39df8ba7-08cd-4c3f-8e06-\
+Cell["\:4e3a\:4e86r2>0,\:5219c>0,q<0\:89e3\:5f62\:5f0f\:5dee\:4e0d\:591a\:5217\
+\:4e00\:4e2a", "Text",
+ CellChangeTimes->{{3.9219875720243473`*^9, 3.9219875826948667`*^9}, {
+  3.922157285646212*^9, 
+  3.922157291177041*^9}},ExpressionUUID->"39df8ba7-08cd-4c3f-8e06-\
 490bbb75dc44"],
 
 Cell[CellGroupData[{
@@ -5544,13 +5546,14 @@ Cell[BoxData[
 Cell[BoxData[
  TagBox[
   StyleBox[
-   DynamicModuleBox[{$CellContext`c$$ = 3.19, $CellContext`q$$ = -4.65, 
+   DynamicModuleBox[{$CellContext`c$$ = 
+    0.9500000000000001, $CellContext`q$$ = -1.1099999999999999`, 
     Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
     Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
     1, Typeset`name$$ = "\"\:65e0\:6807\:9898\"", Typeset`specs$$ = {{
       Hold[$CellContext`c$$], 0.01, 5}, {
       Hold[$CellContext`q$$], -5, -0.01}}, Typeset`size$$ = {
-    360., {170., 174.94482402510937`}}, Typeset`update$$ = 0, 
+    360., {170., 174.4953106895598}}, Typeset`update$$ = 0, 
     Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
@@ -5561,12 +5564,12 @@ Cell[BoxData[
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
         Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
          Typeset`skipInitDone$$}, "Body" :> 
-      Plot3D[4 $CellContext`c$$ (1 + 
-          Tanh[2 Sqrt[-($CellContext`c$$/$CellContext`q$$)] \
-((-$CellContext`c$$) $CellContext`t + $CellContext`x)])/$CellContext`q$$ - 
-        2 $CellContext`c$$ (1 + 
-          Tanh[2 Sqrt[-($CellContext`c$$/$CellContext`q$$)] \
-((-$CellContext`c$$) $CellContext`t + $CellContext`x)])^2/$CellContext`q$$, \
+      Plot3D[(4 $CellContext`c$$) ((1 + 
+           Tanh[(2 Sqrt[-($CellContext`c$$/$CellContext`q$$)]) \
+((-$CellContext`c$$) $CellContext`t + $CellContext`x)])/$CellContext`q$$) - (
+         2 $CellContext`c$$) ((1 + 
+           Tanh[(2 Sqrt[-($CellContext`c$$/$CellContext`q$$)]) \
+((-$CellContext`c$$) $CellContext`t + $CellContext`x)])^2/$CellContext`q$$), \
 {$CellContext`x, -2, 2}, {$CellContext`t, 0.1, 1}, 
         Evaluate[$CellContext`setting1], ColorFunction -> 
         Function[{$CellContext`x, $CellContext`t, $CellContext`z}, 
@@ -5670,7 +5673,7 @@ Cell[BoxData[
     RowBox[{"PlotLabel", "->", "\"\<U\>\""}]}], "]"}], "*)"}]], "Input",Expres\
 sionUUID->"286586d6-81af-440f-a86a-3677e907be7a"]
 },
-WindowSize->{1141.2, 579.6},
+WindowSize->{1141.2, 574.8},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (2021\:5e7412\:67082\
 \:65e5)",
@@ -5760,13 +5763,13 @@ Cell[CellGroupData[{
 Cell[186416, 4883, 755, 22, 97, "Input",ExpressionUUID->"ec497d04-1c69-40bd-9509-3c3c2b0b08b5"],
 Cell[187174, 4907, 13381, 442, 351, "Output",ExpressionUUID->"35210a10-8cd6-4e6b-8cfc-18710a2e1f76"]
 }, Open  ]],
-Cell[200570, 5352, 176, 3, 35, "Text",ExpressionUUID->"39df8ba7-08cd-4c3f-8e06-490bbb75dc44"],
+Cell[200570, 5352, 281, 5, 35, "Text",ExpressionUUID->"39df8ba7-08cd-4c3f-8e06-490bbb75dc44"],
 Cell[CellGroupData[{
-Cell[200771, 5359, 7271, 182, 640, "Input",ExpressionUUID->"e8ef571a-5236-4cf2-8609-8bdd309f8073"],
-Cell[208045, 5543, 3595, 64, 450, "Output",ExpressionUUID->"31d3b155-b755-4a2d-8711-1d417b343f91"]
+Cell[200876, 5361, 7271, 182, 640, "Input",ExpressionUUID->"e8ef571a-5236-4cf2-8609-8bdd309f8073"],
+Cell[208150, 5545, 3642, 65, 427, "Output",ExpressionUUID->"31d3b155-b755-4a2d-8711-1d417b343f91"]
 }, Open  ]],
-Cell[211655, 5610, 275, 7, 43, "Input",ExpressionUUID->"2f9ffc58-8922-4838-9781-d652aa4f0d4d"],
-Cell[211933, 5619, 1741, 51, 135, "Input",ExpressionUUID->"286586d6-81af-440f-a86a-3677e907be7a"]
+Cell[211807, 5613, 275, 7, 43, "Input",ExpressionUUID->"2f9ffc58-8922-4838-9781-d652aa4f0d4d"],
+Cell[212085, 5622, 1741, 51, 135, "Input",ExpressionUUID->"286586d6-81af-440f-a86a-3677e907be7a"]
 }
 ]
 *)
