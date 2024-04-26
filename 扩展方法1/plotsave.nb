@@ -1,0 +1,276 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      8673,        266]
+NotebookOptionsPosition[      8194,        250]
+NotebookOutlinePosition[      8629,        267]
+CellTagsIndexPosition[      8586,        264]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\:4fdd\:7559\:533a\:57df\:ff0cu13 \:6269\:5c55c\:6b63q\:8d1f", "Text",
+ CellChangeTimes->{{3.923109956997491*^9, 
+  3.9231099669081354`*^9}},ExpressionUUID->"3ed89455-4afb-4296-ada8-\
+206425975897"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"paraC", "=", "1"}], ";", 
+  RowBox[{"paraQ", "=", 
+   RowBox[{"-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"setting1", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ClippingStyle", "->", "None"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Exclusions", "->", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          SqrtBox[
+           RowBox[{"-", 
+            FractionBox["c", "q"]}]], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "==", "0"}],
+         "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"q", "->", "paraQ"}], ",", 
+          RowBox[{"c", "->", "paraC"}]}], "}"}]}], "}"}]}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ColorFunction", "->", " ", "\"\<TemperatureMap\>\""}], ",", 
+     RowBox[{"PlotPoints", "->", "60"}]}], 
+    RowBox[{"(*", " ", 
+     RowBox[{"60", "\:5f88\:987a\:6ed1"}], "*)"}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"setting2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ClippingStyle", "->", "None"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Exclusions", "->", "\"\<Singularities\>\""}], ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"ColorFunction", "->", " ", "\"\<TemperatureMap\>\""}], ",", 
+     RowBox[{"PlotPoints", "->", "60"}]}], 
+    RowBox[{"(*", " ", 
+     RowBox[{"60", "\:5f88\:987a\:6ed1"}], "*)"}], "\[IndentingNewLine]", 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"c", " ", 
+      RowBox[{"Coth", "[", 
+       RowBox[{
+        SqrtBox[
+         RowBox[{"-", 
+          FractionBox["c", "q"]}]], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}]}], 
+     RowBox[{"2", " ", 
+      SqrtBox[
+       RowBox[{"-", 
+        FractionBox["c", "q"]}]], " ", "q"}]], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     SqrtBox[
+      RowBox[{"-", 
+       FractionBox["c", "q"]}]], " ", 
+     RowBox[{"Tanh", "[", 
+      RowBox[{
+       SqrtBox[
+        RowBox[{"-", 
+         FractionBox["c", "q"]}]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}]}]}]}], 
+  ";", 
+  RowBox[{
+   RowBox[{"v", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox["c", "q"], "-", 
+    FractionBox[
+     RowBox[{"c", " ", 
+      SuperscriptBox[
+       RowBox[{"Coth", "[", 
+        RowBox[{
+         SqrtBox[
+          RowBox[{"-", 
+           FractionBox["c", "q"]}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}], 
+       "2"]}], 
+     RowBox[{"2", " ", "q"}]], "-", 
+    FractionBox[
+     RowBox[{"c", " ", 
+      SuperscriptBox[
+       RowBox[{"Tanh", "[", 
+        RowBox[{
+         SqrtBox[
+          RowBox[{"-", 
+           FractionBox["c", "q"]}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}], 
+       "2"]}], 
+     RowBox[{"2", " ", "q"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsRow", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"u", "[", 
+         RowBox[{"x", ",", "t"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"q", "->", "paraQ"}], ",", 
+          RowBox[{"c", "->", "paraC"}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+       RowBox[{"Evaluate", "[", "setting1", "]"}], ",", "\[IndentingNewLine]",
+        "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<x\>\"", ",", "\"\<t\>\"", ",", 
+          "\"\<\!\(\*SubscriptBox[\(u\), \(13\)]\)\>\"", ",", "\"\< \>\""}], 
+         "}"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Plot3D", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"v", "[", 
+         RowBox[{"x", ",", "t"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"q", "->", "paraQ"}], ",", 
+          RowBox[{"c", "->", "paraC"}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+       RowBox[{"Evaluate", "[", "setting2", "]"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "5"}], "}"}]}], ",", "\[IndentingNewLine]", 
+       RowBox[{"AxesLabel", "->", 
+        RowBox[{"{", 
+         RowBox[{
+         "\"\<x\>\"", ",", "\"\<t\>\"", ",", 
+          "\"\<\!\(\*SubscriptBox[\(v\), \(13\)]\)\>\"", ",", "\"\< \>\""}], 
+         "}"}]}]}], "]"}]}], "\[IndentingNewLine]", "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{"GraphicsRow", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"u", "[", 
+         RowBox[{"x", ",", "t"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"q", "->", "paraQ"}], ",", 
+          RowBox[{"c", "->", "paraC"}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+       RowBox[{"Exclusions", "->", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            SqrtBox[
+             RowBox[{"-", 
+              FractionBox["c", "q"]}]], 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "==", 
+           "0"}], "/.", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"q", "->", "paraQ"}], ",", 
+            RowBox[{"c", "->", "paraC"}]}], "}"}]}], "}"}]}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "All"}], ",", 
+       RowBox[{"ColorFunction", "\[Rule]", "\"\<TemperatureMap\>\""}]}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"ContourPlot", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"v", "[", 
+         RowBox[{"x", ",", "t"}], "]"}], "/.", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"q", "->", "paraQ"}], ",", 
+          RowBox[{"c", "->", "paraC"}]}], "}"}]}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", 
+         RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+       RowBox[{"PlotRange", "\[Rule]", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", "5"}], "}"}]}], ",", 
+       RowBox[{"Mesh", "\[Rule]", "All"}], ",", 
+       RowBox[{"ColorFunction", "\[Rule]", "\"\<TemperatureMap\>\""}]}], 
+      "]"}]}], "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}]}], "Input",ExpressionUUID->\
+"7ee2cba8-5848-4a81-87bb-9b23d06b719a"]
+},
+WindowSize->{1141.2, 585.6},
+WindowMargins->{{Automatic, -414.5999999999999}, {Automatic, 56.4}},
+FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (2021\:5e7412\:67082\
+\:65e5)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"9d2af76c-5d80-4377-a9f1-e56135f0795b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 204, 3, 35, "Text",ExpressionUUID->"3ed89455-4afb-4296-ada8-206425975897"],
+Cell[765, 25, 7425, 223, 973, "Input",ExpressionUUID->"7ee2cba8-5848-4a81-87bb-9b23d06b719a"]
+}
+]
+*)
+
+(* End of internal cache information *)
+
