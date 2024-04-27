@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      8673,        266]
-NotebookOptionsPosition[      8194,        250]
-NotebookOutlinePosition[      8629,        267]
-CellTagsIndexPosition[      8586,        264]
+NotebookDataLength[     26424,        789]
+NotebookOptionsPosition[     25297,        766]
+NotebookOutlinePosition[     25712,        783]
+CellTagsIndexPosition[     25669,        780]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -246,10 +246,526 @@ Cell[BoxData[{
        RowBox[{"ColorFunction", "\[Rule]", "\"\<TemperatureMap\>\""}]}], 
       "]"}]}], "}"}], ",", 
    RowBox[{"ImageSize", "\[Rule]", "800"}]}], "]"}]}], "Input",ExpressionUUID->\
-"7ee2cba8-5848-4a81-87bb-9b23d06b719a"]
+"7ee2cba8-5848-4a81-87bb-9b23d06b719a"],
+
+Cell["\:8d1f\:62d3\:5c55,k<0", "Text",
+ CellChangeTimes->{{3.9231960943410444`*^9, 3.923196101390967*^9}, {
+  3.9231961346411467`*^9, 3.9231961369060135`*^9}},
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"5ecc67b1-63ea-4652-aef3-a6e8e5f77b54"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"exprPos", "=", " ", 
+   RowBox[{
+    SqrtBox["k"], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Tanh", "[", 
+       RowBox[{"2", 
+        SqrtBox["k"], 
+        RowBox[{"(", 
+         RowBox[{"z", "+", "x0"}], ")"}]}], "]"}], "-", 
+      RowBox[{"I", "*", "r", "*", 
+       RowBox[{"Sech", "[", 
+        RowBox[{"2", 
+         SqrtBox["k"], 
+         RowBox[{"(", 
+          RowBox[{"z", "+", "x0"}], ")"}]}], "]"}]}]}], ")"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"exprNeg", "=", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"-", "\[Rho]"}], "*", 
+     SqrtBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "k"}], 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox["\[Gamma]", "2"], "-", 
+          SuperscriptBox["\[Tau]", "2"]}], ")"}]}], "-", 
+       RowBox[{"\[Gamma]", 
+        SqrtBox[
+         RowBox[{"-", "k"}]], 
+        RowBox[{"Cos", "[", 
+         RowBox[{"2", 
+          SqrtBox[
+           RowBox[{"-", "k"}]], 
+          RowBox[{"(", 
+           RowBox[{"z", "+", 
+            SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}], 
+    RowBox[{
+     RowBox[{"\[Gamma]", "*", 
+      RowBox[{"Sin", "[", 
+       RowBox[{"2", 
+        SqrtBox[
+         RowBox[{"-", "k"}]], 
+        RowBox[{"(", 
+         RowBox[{"z", "+", 
+          SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}], "+", "\[Tau]"}]]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"odeolList", "=", 
+   RowBox[{"Map", "[", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"If", "[", "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"Simplify", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"k", ">", "0"}], "/.", " ", "#"}], ",", 
+          RowBox[{
+           RowBox[{"c", ">", "0"}], "&&", 
+           RowBox[{"q", ">", "0"}]}]}], "]"}], ",", "\[IndentingNewLine]", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"P", "[", "z", "]"}], "->", "exprPos"}], "/.", " ", "#"}], 
+        ",", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"P", "[", "z", "]"}], "->", "exprNeg"}], "/.", " ", "#"}]}],
+        "]"}], "&"}], ",", "\[IndentingNewLine]", "solNice"}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{
+  3.923196121401084*^9},ExpressionUUID->"f328c865-fc3c-472c-a2fa-\
+b0008ecb5f7a"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"paraC", "=", "1"}], ";", 
+  RowBox[{"paraQ", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraX0", " ", "=", "1"}], ";", 
+  RowBox[{"paraR", " ", "=", 
+   RowBox[{"-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraT", " ", "=", " ", "4"}], ";", 
+  RowBox[{"paraG", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"setting1", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ClippingStyle", "->", "None"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Exclusions", "->", "\"\<Singularities\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ColorFunction", "->", " ", "\"\<TemperatureMap\>\""}]}], 
+     RowBox[{"(*", 
+      RowBox[{",", 
+       RowBox[{"PlotPoints", "->", "60"}]}], 
+      RowBox[{"(*", " ", 
+       RowBox[{"60", "\:5f88\:987a\:6ed1"}], "*)"}], "*)"}], 
+     "\[IndentingNewLine]", "}"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{"2", " ", "c", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Tau]", "+", 
+          RowBox[{"\[Gamma]", " ", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"4", " ", 
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}], ")"}]}], 
+       RowBox[{"q", " ", "\[Rho]", " ", 
+        SqrtBox[
+         RowBox[{
+          FractionBox[
+           RowBox[{"4", " ", "c", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox["\[Gamma]", "2"], "-", 
+              SuperscriptBox["\[Tau]", "2"]}], ")"}]}], "q"], "-", 
+          RowBox[{"2", " ", 
+           SqrtBox[
+            FractionBox["c", "q"]], " ", "\[Gamma]", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{"4", " ", 
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}]]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"q", "->", "paraQ"}], ",", 
+       RowBox[{"c", "->", "paraC"}], ",", 
+       RowBox[{
+        SubscriptBox["\[Xi]", "0"], "->", "paraX0"}], ",", 
+       RowBox[{"\[Rho]", "->", "paraR"}], ",", 
+       RowBox[{"\[Gamma]", "->", "paraG"}], ",", 
+       RowBox[{"\[Tau]", "->", "paraT"}]}], "}"}]}], "//", "N"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", " ", "c"}], "q"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "c", " ", 
+      SuperscriptBox[
+       RowBox[{"Coth", "[", 
+        RowBox[{"2", " ", 
+         SqrtBox[
+          RowBox[{"-", 
+           FractionBox["c", "q"]}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}], 
+       "2"]}], "q"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "t"}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"Evaluate", "[", "setting1", "]"}], ",", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<x\>\"", ",", "\"\<t\>\"", ",", 
+      "\"\<\!\(\*SubscriptBox[\(u\), \(13\)]\)\>\"", ",", "\"\< \>\""}], 
+     "}"}]}]}], "]"}]}], "Input",ExpressionUUID->"f3b96510-ee34-4af7-8160-\
+c3bd7d0c5318"],
+
+Cell["2", "Text",
+ CellChangeTimes->{3.9231962590286674`*^9},
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"c4efd8e8-aff3-4548-b95f-246554490cf6"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"paraC", "=", "1"}], ";", 
+  RowBox[{"paraQ", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraX0", " ", "=", "1"}], ";", 
+  RowBox[{"paraR", " ", "=", 
+   RowBox[{"-", "1"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"paraT", " ", "=", " ", "4"}], ";", 
+  RowBox[{"paraG", " ", "=", " ", "2"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"setting1", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"ClippingStyle", "->", "None"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"Exclusions", "->", "\"\<Singularities\>\""}], ",", 
+      "\[IndentingNewLine]", 
+      RowBox[{"ColorFunction", "->", " ", "\"\<TemperatureMap\>\""}], ",", 
+      RowBox[{"PlotPoints", "->", "60"}]}], 
+     RowBox[{"(*", " ", 
+      RowBox[{"60", "\:5f88\:987a\:6ed1"}], "*)"}], "\[IndentingNewLine]", 
+     "}"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox[
+        RowBox[{"\[ImaginaryI]", " ", 
+         SqrtBox["c"]}], 
+        RowBox[{"2", " ", 
+         SqrtBox["q"]}]]}], "-", 
+      FractionBox[
+       RowBox[{"\[Rho]", " ", 
+        SqrtBox[
+         RowBox[{
+          FractionBox[
+           RowBox[{"c", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox["\[Gamma]", "2"], "-", 
+              SuperscriptBox["\[Tau]", "2"]}], ")"}]}], 
+           RowBox[{"4", " ", "q"}]], "-", 
+          RowBox[{
+           FractionBox["1", "2"], " ", 
+           SqrtBox[
+            FractionBox["c", "q"]], " ", "\[Gamma]", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}], 
+       RowBox[{"2", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Tau]", "+", 
+          RowBox[{"\[Gamma]", " ", 
+           RowBox[{"Sin", "[", 
+            RowBox[{
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}], ")"}]}]], 
+      "+", 
+      FractionBox[
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"\[Tau]", "+", 
+          RowBox[{"\[Gamma]", " ", 
+           RowBox[{"Sin", "[", 
+            RowBox[{
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}], ")"}]}], 
+       RowBox[{"8", " ", "q", " ", "\[Rho]", " ", 
+        SqrtBox[
+         RowBox[{
+          FractionBox[
+           RowBox[{"c", " ", 
+            RowBox[{"(", 
+             RowBox[{
+              SuperscriptBox["\[Gamma]", "2"], "-", 
+              SuperscriptBox["\[Tau]", "2"]}], ")"}]}], 
+           RowBox[{"4", " ", "q"}]], "-", 
+          RowBox[{
+           FractionBox["1", "2"], " ", 
+           SqrtBox[
+            FractionBox["c", "q"]], " ", "\[Gamma]", " ", 
+           RowBox[{"Cos", "[", 
+            RowBox[{
+             SqrtBox[
+              FractionBox["c", "q"]], " ", 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}]]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"q", "->", "paraQ"}], ",", 
+       RowBox[{"c", "->", "paraC"}], ",", 
+       RowBox[{
+        SubscriptBox["\[Xi]", "0"], "->", "paraX0"}], ",", 
+       RowBox[{"\[Rho]", "->", "paraR"}], ",", 
+       RowBox[{"\[Gamma]", "->", "paraG"}], ",", 
+       RowBox[{"\[Tau]", "->", "paraT"}]}], "}"}]}], "//", "N"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"g", "[", 
+    RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", " ", "c"}], "q"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "c", " ", 
+      SuperscriptBox[
+       RowBox[{"Coth", "[", 
+        RowBox[{"2", " ", 
+         SqrtBox[
+          RowBox[{"-", 
+           FractionBox["c", "q"]}]], " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}], 
+       "2"]}], "q"]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Plot3D", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{"f", "[", 
+     RowBox[{"x", ",", "t"}], "]"}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", 
+     RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+   RowBox[{"Evaluate", "[", "setting1", "]"}], ",", "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"AxesLabel", "->", 
+    RowBox[{"{", 
+     RowBox[{
+     "\"\<x\>\"", ",", "\"\<t\>\"", ",", 
+      "\"\<\!\(\*SubscriptBox[\(u\), \(13\)]\)\>\"", ",", "\"\< \>\""}], 
+     "}"}]}]}], "]"}]}], "Input",ExpressionUUID->"011fe05e-2361-444f-b4e5-\
+343b428742c5"],
+
+Cell["3", "Text",
+ CellChangeTimes->{
+  3.923198177372854*^9},ExpressionUUID->"d0793926-b8e8-4d81-a758-\
+13256b830434"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{"exprNeg", "=", 
+     RowBox[{"I", "*", "\[Rho]", "*", 
+      SqrtBox[
+       RowBox[{"-", "k"}]], 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        FractionBox[
+         RowBox[{"2", "\[Gamma]"}], 
+         RowBox[{"\[Gamma]", "+", 
+          RowBox[{"Cos", "[", 
+           RowBox[{"2", 
+            SqrtBox[
+             RowBox[{"-", "k"}]], 
+            RowBox[{"(", 
+             RowBox[{"z", "+", 
+              SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}], "+", 
+          RowBox[{"I", "*", "\[Rho]", "*", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"2", 
+             SqrtBox[
+              RowBox[{"-", "k"}]], 
+             RowBox[{"(", 
+              RowBox[{"z", "+", 
+               SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}], ")"}]}]}],
+     ";"}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"paraC", "=", "1"}], ";", 
+    RowBox[{"paraQ", "=", "8"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paraX0", " ", "=", "1"}], ";", 
+    RowBox[{"paraR", " ", "=", "2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"paraT", " ", "=", " ", "4"}], ";", 
+    RowBox[{"paraG", " ", "=", " ", "1.5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"setting1", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"ClippingStyle", "->", "None"}], ",", "\[IndentingNewLine]", 
+       RowBox[{"Exclusions", "->", "\"\<Singularities\>\""}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{"ColorFunction", "->", " ", "\"\<TemperatureMap\>\""}]}], 
+      RowBox[{"(*", 
+       RowBox[{",", 
+        RowBox[{"PlotPoints", "->", "60"}]}], 
+       RowBox[{"(*", " ", 
+        RowBox[{"60", "\:5f88\:987a\:6ed1"}], "*)"}], "*)"}], 
+      "\[IndentingNewLine]", "}"}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[ImaginaryI]", " ", 
+        SqrtBox[
+         FractionBox["c", "q"]], " ", "\[Rho]", " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          FractionBox[
+           RowBox[{"2", " ", "\[Gamma]"}], 
+           RowBox[{"\[Gamma]", "+", 
+            RowBox[{"Cos", "[", 
+             RowBox[{"4", " ", 
+              SqrtBox[
+               FractionBox["c", "q"]], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{
+                 RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+                SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}], "+", 
+            RowBox[{"\[ImaginaryI]", " ", "\[Rho]", " ", 
+             RowBox[{"Sin", "[", 
+              RowBox[{"4", " ", 
+               SqrtBox[
+                FractionBox["c", "q"]], " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{
+                  RowBox[{"-", "c"}], " ", "t"}], "+", "x", "+", 
+                 SubscriptBox["\[Xi]", "0"]}], ")"}]}], "]"}]}]}]]}], ")"}]}],
+        "/.", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"q", "->", "paraQ"}], ",", 
+         RowBox[{"c", "->", "paraC"}], ",", 
+         RowBox[{
+          SubscriptBox["\[Xi]", "0"], "->", "paraX0"}], ",", 
+         RowBox[{"\[Rho]", "->", "paraR"}], ",", 
+         RowBox[{"\[Gamma]", "->", "paraG"}], ",", 
+         RowBox[{"\[Tau]", "->", "paraT"}]}], "}"}]}], "//", "N"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g", "[", 
+      RowBox[{"x_", ",", "t_"}], "]"}], ":=", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"2", " ", "c"}], "q"], "-", 
+      FractionBox[
+       RowBox[{"2", " ", "c", " ", 
+        SuperscriptBox[
+         RowBox[{"Coth", "[", 
+          RowBox[{"2", " ", 
+           SqrtBox[
+            RowBox[{"-", 
+             FractionBox["c", "q"]}]], " ", 
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"-", "c"}], " ", "t"}], "+", "x"}], ")"}]}], "]"}], 
+         "2"]}], "q"]}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"Plot3D", "[", 
+    RowBox[{
+     RowBox[{"Abs", "[", 
+      RowBox[{"f", "[", 
+       RowBox[{"x", ",", "t"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", 
+       RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"t", ",", "0", ",", "3"}], "}"}], ",", 
+     RowBox[{"Evaluate", "[", "setting1", "]"}], ",", "\[IndentingNewLine]", 
+     "\[IndentingNewLine]", 
+     RowBox[{"AxesLabel", "->", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<x\>\"", ",", "\"\<t\>\"", ",", 
+        "\"\<\!\(\*SubscriptBox[\(u\), \(13\)]\)\>\"", ",", "\"\< \>\""}], 
+       "}"}]}]}], "]"}], "\[IndentingNewLine]"}]}]], "Input",
+ CellChangeTimes->{{3.923198195356961*^9, 
+  3.923198197762805*^9}},ExpressionUUID->"7aaa4ef4-f6fe-4a71-91ff-\
+b0bcad92abf3"]
 },
-WindowSize->{1141.2, 585.6},
-WindowMargins->{{Automatic, -414.5999999999999}, {Automatic, 56.4}},
+WindowSize->{1141.2, 574.8},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"13.0 for Microsoft Windows (64-bit) (2021\:5e7412\:67082\
 \:65e5)",
 StyleDefinitions->"Default.nb",
@@ -267,10 +783,15 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[558, 20, 204, 3, 35, "Text",ExpressionUUID->"3ed89455-4afb-4296-ada8-206425975897"],
-Cell[765, 25, 7425, 223, 973, "Input",ExpressionUUID->"7ee2cba8-5848-4a81-87bb-9b23d06b719a"]
+Cell[765, 25, 7425, 223, 973, "Input",ExpressionUUID->"7ee2cba8-5848-4a81-87bb-9b23d06b719a"],
+Cell[8193, 250, 255, 4, 51, "Text",ExpressionUUID->"5ecc67b1-63ea-4652-aef3-a6e8e5f77b54"],
+Cell[8451, 256, 2295, 77, 271, "Input",ExpressionUUID->"f328c865-fc3c-472c-a2fa-b0008ecb5f7a"],
+Cell[10749, 335, 3997, 117, 479, "Input",ExpressionUUID->"f3b96510-ee34-4af7-8160-c3bd7d0c5318"],
+Cell[14749, 454, 157, 3, 51, "Text",ExpressionUUID->"c4efd8e8-aff3-4548-b95f-246554490cf6"],
+Cell[14909, 459, 5404, 160, 510, "Input",ExpressionUUID->"011fe05e-2361-444f-b4e5-343b428742c5"],
+Cell[20316, 621, 119, 3, 35, "Text",ExpressionUUID->"d0793926-b8e8-4d81-a758-13256b830434"],
+Cell[20438, 626, 4855, 138, 539, "Input",ExpressionUUID->"7aaa4ef4-f6fe-4a71-91ff-b0bcad92abf3"]
 }
 ]
 *)
-
-(* End of internal cache information *)
 
